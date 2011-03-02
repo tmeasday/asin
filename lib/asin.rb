@@ -117,8 +117,8 @@ module ASIN
   #
   # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
   #
-  def search(search_string, params={:SearchIndex => :Books})
-    response = call(params.merge(:Operation => :ItemSearch, :Keywords => search_string))
+  def search(params={:SearchIndex => :Books})
+    response = call(params.merge(:Operation => :ItemSearch))
     response['ItemSearchResponse']['Items']['Item'].map {|item| Item.new(item)}
   end
 
