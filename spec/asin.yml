@@ -1,4 +1,2 @@
-secret: 'secret'
-key: 'key'
-host: 'host'
-logger: 'logger'
+secret_access_key: 'secret'
+access_key_id: 'key'

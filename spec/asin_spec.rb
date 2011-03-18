@@ -34,11 +34,9 @@ describe ASIN do
     end
     
     it "should read configuration from yml" do
-      config = ASIN::Configuration.configure :yaml => 'spec/asin.yml'
+      config = ASIN::Configuration.configure :s3_credentials => 'spec/asin.yml'
       config.secret.should eql('secret')
       config.key.should eql('key')
-      config.host.should eql('host')
-      config.logger.should eql('logger')
     end
   end
 
